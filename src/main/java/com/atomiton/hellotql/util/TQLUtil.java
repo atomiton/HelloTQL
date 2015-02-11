@@ -31,7 +31,7 @@ import org.apache.commons.io.FileUtils;
  * @author baseerkhan
  *
  */
-public class SimulatorUtil {
+public class TQLUtil {
 	
 	public static int getRandomNumberBetween(int low, int high) {
 		Random random = new Random();
