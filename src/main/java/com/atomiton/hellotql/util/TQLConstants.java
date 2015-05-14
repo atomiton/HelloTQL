@@ -21,6 +21,6 @@ package com.atomiton.hellotql.util;
  */
 public class TQLConstants {
 	
-	public static String TQL_EVENTS_WSURL = "ws://tqldev.atomtion.com:9090";
+	public static String TQL_INTERFACE_URL = "http://cisco.atomiton.com:8080/fid-CIMTQLInterface-JVH2ZQ7YAAAH6AABAE2I4NJR";
 	
 }

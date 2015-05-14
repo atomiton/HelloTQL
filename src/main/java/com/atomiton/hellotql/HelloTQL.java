@@ -14,6 +14,8 @@
  */
 package com.atomiton.hellotql;
 
+import com.atomiton.hellotql.util.TQLUtil;
+
 
 
 /**
@@ -33,8 +35,9 @@ public class HelloTQL {
 	public static void main(String[] args) {
 		try {
 			
-			System.out.println("Welcome to Hello TQL. Here are you events. Start consuming them");
-			
+			System.out.println("Welcome to Hello TQL.");
+			System.out.println("Getting all ParkingSpaces...");
+			System.out.println(TQLUtil.getAllParkingSpaces());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

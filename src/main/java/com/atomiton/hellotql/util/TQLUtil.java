@@ -32,14 +32,14 @@ import org.apache.commons.io.FileUtils;
  *
  */
 public class TQLUtil {
-	
+
 	public static int getRandomNumberBetween(int low, int high) {
 		Random random = new Random();
 		int randomNumber = random.nextInt(high - low) + low;
 		return randomNumber;
 	}
 
-	
+
 	public static String readContentsFromFile(String fName) throws Exception {
 		File f = new File (fName);
 		String strFileContent = FileUtils.readFileToString(f);
@@ -55,7 +55,7 @@ public class TQLUtil {
 		File f2 = new File (folder + "/" + fName);
 		FileUtils.writeStringToFile(f2, content, false);
 	}
-	
+
 	public static void writeContentToFile(String folder, byte[] content, String fName) 
 			throws Exception {
 		File f = new File (folder);
@@ -89,13 +89,27 @@ public class TQLUtil {
 		return toUTC(getTodaysDate()).longValue();
 	}
 
-		
+
 	public static boolean isNull(String str) {
 		return (str == null || str.length() == 0);
 	}
-	
-	
 
+
+	/**
+	 * <Query>
+			<Find>
+				<ParkingSpace>
+  					<sid Ne=""/>
+				</ParkingSpace>
+			</Find>
+		</Query>
+	 */
+	public static String getAllParkingSpaces() throws Exception  {
+		StringBuffer sb = new StringBuffer("<Query>");
+		sb.append("<Find><ParkingSpace><sid ne=\"\"/>");
+		sb.append("</ParkingSpace></Find></Query>");
+		return HttpRequestResponseHandler.sendPost(TQLConstants.TQL_INTERFACE_URL, sb.toString());
+	}
 
 
 }
